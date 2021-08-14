@@ -1,0 +1,17 @@
+{
+  "name": "fun_blog",
+  "version": "1.0.0",
+  "description": "A project of vuepress-theme-hope",
+  "license": "MIT",
+  "scripts": {
+    "docs:build": "vuepress build F:/blog/",
+    "docs:clean-dev": "vuepress dev F:/blog/ --no-cache",
+    "docs:dev": "vuepress dev F:/blog/",
+    "docs:eject-theme": "vuepress eject-hope F:/blog/",
+	"publish": "sh deploy.sh"
+  },
+  "devDependencies": {
+    "vuepress": "^1.8.2",
+    "vuepress-theme-hope": "^1.19.2"
+  }
+}
