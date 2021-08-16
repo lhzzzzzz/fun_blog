@@ -1592,6 +1592,11 @@
   resolved "https://registry.nlark.com/@types/hash-sum/download/@types/hash-sum-1.0.0.tgz#838f4e8627887d42b162d05f3d96ca636c2bc504"
   integrity sha1-g49OhieIfUKxYtBfPZbKY2wrxQQ=
 
+"@types/highlight.js@^9.7.0":
+  version "9.12.4"
+  resolved "https://registry.npm.taobao.org/@types/highlight.js/download/@types/highlight.js-9.12.4.tgz#8c3496bd1b50cc04aeefd691140aa571d4dbfa34"
+  integrity sha1-jDSWvRtQzASu79aRFAqlcdTb+jQ=
+
 "@types/http-proxy@^1.17.5":
   version "1.17.7"
   resolved "https://registry.nlark.com/@types/http-proxy/download/@types/http-proxy-1.17.7.tgz#30ea85cc2c868368352a37f0d0d3581e24834c6f"
@@ -1641,13 +1646,13 @@
     markdown-it-anchor "*"
 
 "@types/markdown-it@^12.0.3":
-  version "12.2.0"
-  resolved "https://registry.nlark.com/@types/markdown-it/download/@types/markdown-it-12.2.0.tgz#f609929ac1e50cf0d039473fb331ebc62e313b34"
-  integrity sha1-9gmSmsHlDPDQOUc/szHrxi4xOzQ=
+  version "12.0.3"
+  resolved "https://registry.nlark.com/@types/markdown-it/download/@types/markdown-it-12.0.3.tgz#60a09363bebbd780fac815442b47d80f1a17bef1"
+  integrity sha1-YKCTY76714D6yBVEK0fYDxoXvvE=
   dependencies:
+    "@types/highlight.js" "^9.7.0"
     "@types/linkify-it" "*"
     "@types/mdurl" "*"
-    highlight.js "^10.7.2"
 
 "@types/mdurl@*":
   version "1.0.2"
@@ -5630,11 +5635,6 @@ hex-color-regex@^1.1.0:
   version "1.1.0"
   resolved "https://registry.npm.taobao.org/hex-color-regex/download/hex-color-regex-1.1.0.tgz#4c06fccb4602fe2602b3c93df82d7e7dbf1a8a8e"
   integrity sha1-TAb8y0YC/iYCs8k9+C1+fb8aio4=
-
-highlight.js@^10.7.2:
-  version "10.7.3"
-  resolved "https://registry.nlark.com/highlight.js/download/highlight.js-10.7.3.tgz#697272e3991356e40c3cac566a74eef681756531"
-  integrity sha1-aXJy45kTVuQMPKxWanTu9oF1ZTE=
 
 hmac-drbg@^1.0.1:
   version "1.0.1"

@@ -1,7 +1,7 @@
 {
   "name": "fun_blog",
   "version": "1.0.0",
-  "description": "A project of vuepress-theme-hope",
+  "description": "A fun blog",
   "license": "MIT",
   "scripts": {
     "docs:build": "vuepress build F:/blog/",

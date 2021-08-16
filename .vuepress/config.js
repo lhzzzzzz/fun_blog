@@ -1,8 +1,8 @@
 const { config } = require("vuepress-theme-hope");
 
 module.exports = config({
-  title: "Theme Demo",
-  description: "A demo for vuepress-theme-hope",
+  title: "Fun Blog",
+  base: "/",
 
   dest: "./dist",
 
@@ -26,97 +26,79 @@ module.exports = config({
 
   locales: {
     "/": {
-      lang: "en-US",
-    },
-    "/zh/": {
-      title: "Theme Demo",
-      description: "vuepress-theme-hope 的 demo",
+      lang: "zh-CN",
     },
   },
 
   themeConfig: {
-    logo: "/logo.svg",
-    hostname: "https://vuepress-theme-hope-demo.mrhope.site",
+    logo: "/batman.jpg",
+    hostname: "http://www.liuhanzhe.com/",
 
-    author: "Mr.Hope",
-    repo: "https://github.com/vuepress-theme-hope/vuepress-theme-hope",
+    author: "lhz",
+    repo: "https://github.com/lhzzzzzz/lhzzzzzz.github.io",
 
-    nav: [
-      { text: "Blog Home", link: "/", icon: "home" },
-      { text: "Project Home", link: "/home/", icon: "home" },
-      {
-        text: "Guide",
-        icon: "creative",
-        link: "/guide/",
-      },
-      {
-        text: "Docs",
-        link: "https://vuepress-theme-hope.github.io/",
-        icon: "note",
-      },
-    ],
+    wordPerminute: false,
+    sidebar: "auto",
+	darkmode: "auto",
 
-    sidebar: {
-      "/": [
-        "",
-        "home",
-        "slides",
-        "layout",
+	blog: {
+		"avatar": "/batman.jpg"
+	},
+
+	nav: [
+          { text: "博客主页", link: "/", icon: "home" },
+          { text: "安全", link: "/docs/security/", icon: "safe" },
+		      { text: "开发", link: "/docs/develop/git", icon: "shell" },
+		      { text: "时间轴", link: "/timeline/", icon: "time" },
+        ],
+
+	sidebar: {
+      "/docs/security/tools/": [
         {
-          title: "Guide",
+          title: "安全工具",
           icon: "creative",
-          prefix: "guide/",
-          children: ["", "page", "markdown", "disable", "encrypt"],
+          prefix: "/docs/security/tools/",
+          children: ["dvcs"],
+        },
+      ],
+
+      "/docs/security/attack/": [
+        {
+          title: "渗透",
+          icon: "anonymous",
+          prefix: "/docs/security/attack/",
+          children: [
+            {
+              title: "信息收集",
+              icon: "anonymous",
+              prefix: "collection/",
+              children: ["info"],
+            },
+          ],
+        },
+      ],
+      "/docs/security/ctf/": [
+        {
+          title: "CTF",
+          icon: "flag",
+          prefix: "/docs/security/ctf/",
+          children: ["info"],
+        },
+      ],
+      "/docs/develop/": [
+        {
+          title: "开发",
+          icon: "symbol",
+          prefix: "/docs/develop/",
+          children: ["git"],
         },
       ],
     },
 
-    locales: {
-      "/zh/": {
-        nav: [
-          { text: "博客主页", link: "/zh/", icon: "home" },
-          { text: "项目主页", link: "/zh/home/", icon: "home" },
-          {
-            text: "如何使用",
-            icon: "creative",
-            link: "/zh/guide/",
-          },
-          {
-            text: "主题文档",
-            icon: "note",
-            link: "https://vuepress-theme-hope.github.io/zh/",
-          },
-        ],
-        sidebar: {
-          "/zh/": [
-            "",
-            "home",
-            "slides",
-            "layout",
-            {
-              title: "如何使用",
-              icon: "creative",
-              prefix: "guide/",
-              children: ["", "page", "markdown", "disable", "encrypt"],
-            },
-          ],
-        },
-      },
-    },
-
-    blog: {
-      intro: "/intro/",
-      sidebarDisplay: "mobile",
-      links: {
-        Zhihu: "https://zhihu.com",
-        Baidu: "https://baidu.com",
-        Github: "https://github.com",
-      },
-    },
 
     footer: {
       display: true,
-      content: "默认页脚",
+      content: "Fun Blog",
     },
 
     comment: {
