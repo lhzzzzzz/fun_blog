@@ -35,11 +35,12 @@ module.exports = config({
     hostname: "http://www.liuhanzhe.com/",
 
     author: "lhz",
-    repo: "https://github.com/lhzzzzzz/lhzzzzzz.github.io",
+    repo: "https://github.com/lhzzzzzz/fun_blog",
+    docsBranch: "master",
 
-    wordPerminute: false,
     sidebar: "auto",
-	darkmode: "auto",
+	  darkmode: "auto",
+
 
 	blog: {
 		"avatar": "/batman.jpg"
@@ -96,6 +97,7 @@ module.exports = config({
     },
 
 
+
     footer: {
       display: true,
       content: "Fun Blog",
@@ -112,6 +114,7 @@ module.exports = config({
 
     git: {
       timezone: "Asia/Shanghai",
+      contributor: false,
     },
 
     mdEnhance: {

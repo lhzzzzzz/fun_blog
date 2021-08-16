@@ -13,12 +13,11 @@ category: 渗透
 tag:
   - 渗透
   - 信息收集
-# 此页面会在文章列表指定
-sticky: true
-# 此页面会出现在首页的文章板块中
-star: true
 
+# 此页面会出现在首页的文章板块中
 comment: false
+
+
 ---
 
 ## 目录遍历  
