@@ -73,7 +73,7 @@ module.exports = config({
               title: "信息收集",
               icon: "anonymous",
               prefix: "collection/",
-              children: ["info"],
+              children: ["info", "passwd"],
             },
           ],
         },

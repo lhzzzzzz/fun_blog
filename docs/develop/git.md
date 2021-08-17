@@ -12,10 +12,7 @@ category: Git
 # 一个页面可以有多个标签
 tag:
   - Git
-# 此页面会在文章列表指定
-sticky: true
-# 此页面会出现在首页的文章板块中
-star: true
+
 original: false
 
 comment: false
