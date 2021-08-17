@@ -25,8 +25,9 @@ comment: false
 ```bash
 	python GitHack.py http://www.example.com/.git/
 ```
-::: tip
-	还原后的文件在 dist/ 目录下
+
+:::tip
+还原后的文件在 dist/ 目录下
 :::
 
 ## svn/git/Mercurial/Bazaar利用工具
