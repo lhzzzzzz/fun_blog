@@ -13,10 +13,6 @@ category: 安全工具
 tag:
   - 安全工具
   - 信息收集
-# 此页面会在文章列表指定
-sticky: true
-# 此页面会出现在首页的文章板块中
-star: true
 
 comment: false
 ---
