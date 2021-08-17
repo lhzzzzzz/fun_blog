@@ -1,6 +1,6 @@
 ---
 # 这是页面的图标
-icon: page
+icon: token
 # 这是文章的标题
 title: 默认密码收集
 # 设置作者
