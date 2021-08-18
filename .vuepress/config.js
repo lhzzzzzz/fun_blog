@@ -41,6 +41,7 @@ module.exports = config({
     sidebar: "auto",
 	  darkmode: "auto",
 
+    displayAllHeaders: true,
 
 	blog: {
 		"avatar": "/batman.jpg"
@@ -59,31 +60,29 @@ module.exports = config({
           title: "安全工具",
           icon: "creative",
           prefix: "/docs/security/tools/",
+          collapsable: false,
           children: ["dvcs"],
         },
       ],
 
+
       "/docs/security/attack/": [
-        {
-          title: "渗透",
-          icon: "anonymous",
-          prefix: "/docs/security/attack/",
-          children: [
             {
               title: "信息收集",
               icon: "anonymous",
               prefix: "collection/",
+              collapsable: false,
               children: ["info", "passwd"],
             },
             {
               title: "攻击",
               icon: "hot",
               prefix: "attack/",
+              collapsable: false,
               children: ["sql_injection", "xss"],
             },
           ],
-        },
-      ],
+
       "/docs/security/ctf/": [
         {
           title: "CTF",

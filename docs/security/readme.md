@@ -13,7 +13,7 @@ features:
     link: /docs/security/tools/dvcs
   - title: 渗透 📡
     details: 渗透相关
-    link: /docs/security/attack/collection/info
+    link: /docs/security/attack/
   - title: CTF 🔐
     details: CTF学习和write up收集
     link: /docs/security/ctf/info
