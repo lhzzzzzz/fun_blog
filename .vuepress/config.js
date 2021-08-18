@@ -75,6 +75,12 @@ module.exports = config({
               prefix: "collection/",
               children: ["info", "passwd"],
             },
+            {
+              title: "攻击",
+              icon: "hot",
+              prefix: "attack/",
+              children: ["sql_injection"],
+            },
           ],
         },
       ],
