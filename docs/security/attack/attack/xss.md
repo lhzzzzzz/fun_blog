@@ -19,10 +19,11 @@ comment: false
 script、input中：
 
 ```jsx
-' οninput=alert`1` //      当要在input中输入内容时触发事件
-' οninput=alert`1` '       同上
-' οnchange=alert`1` //  发生改变的时候触发该事件
-' οnchange=alert`1` '   同上
+' οninput=alert`1`        // 当要在input中输入内容时触发事件
+' οninput=alert`1` '      // 同上
+' οnchange=alert`1`       // 发生改变的时候触发该事件
+' οnchange=alert`1` '     // 同上
+' onmouseover=alert`1` '  // 鼠标移动到上方
 ```
 
 ```jsx
