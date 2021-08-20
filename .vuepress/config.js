@@ -79,7 +79,7 @@ module.exports = config({
               icon: "hot",
               prefix: "attack/",
               collapsable: false,
-              children: ["sql_injection", "xss"],
+              children: ["sql_injection", "xss", "file_include"],
             },
           ],
 
