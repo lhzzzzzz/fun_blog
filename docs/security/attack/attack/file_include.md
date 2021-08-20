@@ -65,7 +65,7 @@ http://www.example.com/index.php?page=./uploadfile/xxx.jpg
 再访问：http://www.xxser.com/index.php?page=./../Apache-20/logs/access.log
 关键在于确定apache路径
 ```
-6. 截断包含
+6. 截断包含  
 magic_quotes_gpc=off 情况下
 ```url
 http://www.example.com/index.php?page=1.jpg%00
