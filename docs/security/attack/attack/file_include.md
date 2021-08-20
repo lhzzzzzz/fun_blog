@@ -1,6 +1,6 @@
 ---
 # 这是页面的图标
-icon: script
+icon: file
 # 这是文章的标题
 title: 文件包含
 # 设置作者
