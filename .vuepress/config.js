@@ -1,7 +1,7 @@
 const { config } = require("vuepress-theme-hope");
 
 module.exports = config({
-  title: "Fun Blog",
+  title: "昔我起舞剑，三尺星斗光",
   base: "/",
 
   dest: "./dist",
