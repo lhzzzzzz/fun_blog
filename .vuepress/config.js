@@ -107,7 +107,7 @@ module.exports = config({
 
     footer: {
       display: true,
-      content: "Fun Blog",
+      content: "lhz",
     },
 
     comment: {
