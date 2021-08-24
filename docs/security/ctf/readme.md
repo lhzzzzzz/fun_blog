@@ -6,4 +6,4 @@ comment: false
 ---
 
 ## 渗透
-- [ctfhub-SSRF](ssrf.md)
+- [ctfhub-SSRF](ctfhub-ssrf.md)
