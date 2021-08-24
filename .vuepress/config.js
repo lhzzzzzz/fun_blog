@@ -89,7 +89,7 @@ module.exports = config({
           icon: "flag",
           prefix: "/docs/security/ctf/",
           collapsable: false,
-          children: ["ssrf"],
+          children: ["ctfhub-ssrf"],
         },
       ],
       "/docs/develop/": [
