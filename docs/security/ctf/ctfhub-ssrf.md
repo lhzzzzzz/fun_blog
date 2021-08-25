@@ -2,7 +2,7 @@
 # 这是页面的图标
 icon: token
 # 这是文章的标题
-title: CTFHub-SSRF-writeup
+title: CTFHub-SSRF-Writeup
 # 设置作者
 author: lhz
 # 设置写作时间
