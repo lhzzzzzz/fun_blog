@@ -10,7 +10,7 @@ tagline: 安全相关
 features:
   - title: 工具 🔧
     details: 各类安全工具收集
-    link: /docs/security/tools/dvcs
+    link: /docs/security/tools/
   - title: 渗透 📡
     details: 渗透相关
     link: /docs/security/attack/

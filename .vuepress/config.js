@@ -61,7 +61,7 @@ module.exports = config({
           icon: "creative",
           prefix: "/docs/security/tools/",
           collapsable: false,
-          children: ["dvcs"],
+          children: ["info", "decrypt", "attack"],
         },
       ],
 
