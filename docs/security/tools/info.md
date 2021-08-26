@@ -2,7 +2,7 @@
 # 这是页面的图标
 icon: page
 # 这是文章的标题
-title: 信息收集
+title: 信息收集工具
 # 设置作者
 author: lhz
 # 设置写作时间
