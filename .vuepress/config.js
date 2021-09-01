@@ -43,9 +43,11 @@ module.exports = config({
 
     displayAllHeaders: true,
 
-	blog: {
-		"avatar": "/batman.jpg"
-	},
+    sidebarDepth: 3,
+  	blog: {
+  		"avatar": "/batman.jpg",
+
+  	},
 
 	nav: [
           { text: "博客主页", link: "/", icon: "home" },
@@ -66,30 +68,35 @@ module.exports = config({
       ],
 
 
-      "/docs/security/attack/": [
+      "/docs/security/collection/": [
             {
               title: "信息收集",
               icon: "anonymous",
-              prefix: "collection/",
+              prefix: "./",
               collapsable: false,
               children: ["info", "passwd"],
             },
-            {
-              title: "攻击",
-              icon: "hot",
-              prefix: "attack/",
-              collapsable: false,
-              children: ["sql_injection", "xss", "file_include"],
-            },
           ],
+
+      "/docs/security/web/": [
+          {
+            title: "Web",
+            icon: "hot",
+            prefix: "./",
+            collapsable: false,
+            children: ["sql_injection", "xss", "file_include"],
+          },
+        ],
+
+
 
       "/docs/security/ctf/": [
         {
-          title: "CTF",
+          title: "writeup",
           icon: "flag",
           prefix: "/docs/security/ctf/",
           collapsable: false,
-          children: ["ctfhub-ssrf"],
+          children: ["ctfhub"],
         },
       ],
       "/docs/develop/": [
