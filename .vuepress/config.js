@@ -63,7 +63,26 @@ module.exports = config({
           icon: "creative",
           prefix: "/docs/security/tools/",
           collapsable: false,
-          children: ["info", "decrypt", "attack"],
+          children: [
+            "",
+            "decrypt",
+            "navbar",
+            "sidebar",
+            {
+              title: "信息收集",
+              icon: "page",
+              collapsable: false,
+              children: ["cvs"],
+            },
+            "navbar",
+            "sidebar",
+            {
+              title: "渗透工具",
+              icon: "page",
+              collapsable: false,
+              children: ["ssrf"],
+            },
+          ],
         },
       ],
 
@@ -74,7 +93,7 @@ module.exports = config({
               icon: "anonymous",
               prefix: "./",
               collapsable: false,
-              children: ["info", "passwd"],
+              children: ["web_file", "passwd"],
             },
           ],
 
@@ -96,7 +115,7 @@ module.exports = config({
           icon: "flag",
           prefix: "/docs/security/ctf/",
           collapsable: false,
-          children: ["ctfhub"],
+          children: ["ctfhub_ssrf"],
         },
       ],
       "/docs/develop/": [
