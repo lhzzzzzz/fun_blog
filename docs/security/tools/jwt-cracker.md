@@ -15,7 +15,7 @@ tag:
   - 解密
 
 comment: false
-typora-root-url: ..\..\..\..\.vuepress\public
+typora-root-url: ..\..\..\.vuepress\public
 ---
 
 一个用C语言编写的多线程JWT暴力破解器  

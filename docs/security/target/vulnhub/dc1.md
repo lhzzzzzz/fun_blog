@@ -15,6 +15,7 @@ tag:
   - vulnhub
   - walkthrough
 comment: false
+typora-root-url: ..\..\..\..\.vuepress\public
 ---
 
 ## 0x01 部署
