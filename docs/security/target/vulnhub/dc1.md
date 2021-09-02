@@ -13,7 +13,6 @@ category: 渗透
 tag:
   - 渗透
   - vulnhub
-  - DC1
 
 comment: false
 ---
