@@ -115,7 +115,7 @@ module.exports = config({
             icon: "hot",
             prefix: "./",
             collapsable: false,
-            children: ["sql_injection", "xss", "file_include"],
+            children: ["sql_injection", "xss", "file_include", "cms"],
           },
         ],
 
