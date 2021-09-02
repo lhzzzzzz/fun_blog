@@ -2,7 +2,7 @@
 # 这是页面的图标
 icon: restrict
 # 这是文章的标题
-title: SSRF
+title: Gopherus
 # 设置作者
 author: lhz
 # 设置写作时间
@@ -16,7 +16,6 @@ tag:
 
 comment: false
 ---
-## SSRF
   ### Gopherus
   如果您知道某个地方存在 SSRF 漏洞，那么此工具将帮助您生成 Gopher 负载以利用 SSRF（服务器端请求伪造）并获得 RCE（远程代码执行）。它还可以帮助您在受害服务器上获得反向 shell。  
   :::tip 下载

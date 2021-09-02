@@ -16,8 +16,7 @@ tag:
 
 comment: false
 ---
-## 版本控制文件泄露利用工具
-  ### .git利用工具
+## .git利用工具
   git 泄漏利用工具，可还原历史版本，还原后的代码文件在 dist/ 目录下
   :::tip 下载
   [HackGit](https://github.com/BugScanTeam/GitHack)
@@ -28,7 +27,7 @@ comment: false
   ```
 
 
-### svn/git/Mercurial/Bazaar利用工具
+## svn/git/Mercurial/Bazaar利用工具
   :::tip 下载
   [dvcs-ripper](https://github.com/kost/dvcs-ripper)
   :::

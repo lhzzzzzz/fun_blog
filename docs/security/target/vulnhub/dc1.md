@@ -1,8 +1,8 @@
 ---
 # 这是页面的图标
-icon: page
+icon: api
 # 这是文章的标题
-title: DC1
+title: DC1-Walkthrough
 # 设置作者
 author: lhz
 # 设置写作时间
@@ -13,7 +13,7 @@ category: 渗透
 tag:
   - 渗透
   - vulnhub
-
+  - walkthrough
 comment: false
 ---
 

@@ -2,7 +2,7 @@
 # 这是页面的图标
 icon: bit
 # 这是文章的标题
-title: 解密工具
+title: JWT破解工具
 # 设置作者
 author: lhz
 # 设置写作时间
@@ -15,9 +15,9 @@ tag:
   - 解密
 
 comment: false
+typora-root-url: ..\..\..\..\.vuepress\public
 ---
 
-## JWT破解工具
 一个用C语言编写的多线程JWT暴力破解器  
 :::tip 下载
 [jwt-cracker](https://github.com/brendan-rius/c-jwt-cracker)   

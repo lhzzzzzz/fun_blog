@@ -21,7 +21,6 @@ tagline: 安全相关
   - [SQL注入](web/sql_injection.md)
   - [XSS Payload](web/xss.md)
   - [文件包含](web/file_include.md)
-
   - [CMS漏洞收集](web/cms.md)
 ---
 

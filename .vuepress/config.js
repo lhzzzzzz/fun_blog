@@ -65,7 +65,12 @@ module.exports = config({
           collapsable: false,
           children: [
             "",
-            "decrypt",
+            {
+              title: "解密工具",
+              icon: "page",
+              collapsable: false,
+              children: ["jwt-cracker", "hashcat"],
+            },
             {
               title: "信息收集",
               icon: "page",
@@ -76,7 +81,7 @@ module.exports = config({
               title: "渗透工具",
               icon: "page",
               collapsable: false,
-              children: ["ssrf"],
+              children: ["gopherus"],
             },
           ],
         },
