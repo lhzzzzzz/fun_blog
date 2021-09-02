@@ -66,16 +66,12 @@ module.exports = config({
           children: [
             "",
             "decrypt",
-            "navbar",
-            "sidebar",
             {
               title: "信息收集",
               icon: "page",
               collapsable: false,
               children: ["cvs"],
             },
-            "navbar",
-            "sidebar",
             {
               title: "渗透工具",
               icon: "page",
@@ -86,7 +82,6 @@ module.exports = config({
         },
       ],
 
-
       "/docs/security/collection/": [
             {
               title: "信息收集",
@@ -96,7 +91,24 @@ module.exports = config({
               children: ["web_file", "passwd"],
             },
           ],
+    "/docs/security/target/": [
+          {
+            title: "靶机",
+            icon: "anonymous",
+            prefix: "./",
+            collapsable: false,
+            children: [
+              {
+                title: "vulnhub",
+                icon: "page",
+                prefix: "./vulnhub/",
+                collapsable: false,
+                children: ["dc1"],
+              },
 
+            ],
+          },
+        ],
       "/docs/security/web/": [
           {
             title: "Web",
