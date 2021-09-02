@@ -53,10 +53,11 @@ hashcat破解模式介绍
 ```
 
 举例
-
-```
 使用Hashcat破解NTLMv2:
+```
 	hashcat -m 5600 Net-NTLM-Hash  password.txt
+```
 爆破Drupal密码(密码hash保存在hash.txt中)：
+```
 	hashcat -m 7900 -a 0 hash.txt password_dict.txt
 ```
