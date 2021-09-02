@@ -11,7 +11,6 @@ time: 2021-08-18
 category: 渗透
 # 一个页面可以有多个标签
 tag:
-  - 渗透
   - XSS
 comment: false
 ---

@@ -11,7 +11,6 @@ time: 2021-08-20
 category: 渗透
 # 一个页面可以有多个标签
 tag:
-  - 渗透
   - 文件包含
 comment: false
 ---
