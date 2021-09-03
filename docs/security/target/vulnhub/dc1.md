@@ -30,14 +30,14 @@ typora-root-url: ..\..\..\..\.vuepress\public
 
 ## 0x02 信息收集
 nmap扫描网段
-```
+```bash
 nmap -sP 192.168.190.0/24
 ```
 ![dc1](/assets/img/target/dc1.png)  
 发现目标IP:`192.168.190.134`  
 
 进一步扫描端口
-```
+```bash
 nmap -T5 -A -v -p- 192.168.190.134
 ```
 扫描结果：
@@ -262,7 +262,7 @@ hashcat使用介绍：[hashcat使用](../../tools/hashcat.md)
 
 执行破解
 
-```
+```bash
 echo "\$S\$DvQI6Y600iNeXRIeEMF94Y6FvN8nujJcEDTCP9nS5.i38jnEKuDR" > hash.txt
 echo "\$S\$DWGrxef6.D0cwB5Ts.GlnLw15chRRWH2s1R3QBwC0EkvBQ/9TCGg" >> hash.txt
 hashcat -m 7900 -a 0 hash.txt /usr/share/wordlists/rockyou.txt 
