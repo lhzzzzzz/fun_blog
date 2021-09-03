@@ -24,7 +24,7 @@ echo 'www.liuhanzhe.com' > CNAME
 
 git init 
 
-copy ../baidu_verify_code-8uVaS4w7Pu.html ./
+cp ../baidu_verify_code-8uVaS4w7Pu.html ./
 git add -A
 git commit -m 'deploy'
 
