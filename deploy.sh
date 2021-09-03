@@ -13,13 +13,18 @@ git commit -m 'modify'
 
 git push -f git@github.com:lhzzzzzz/fun_blog.git master
 
+
 # 进入生成的文件夹
 cd dist
 
 # 如果是发布到自定义域名
 echo 'www.liuhanzhe.com' > CNAME
 
+
+
 git init 
+
+copy ../baidu_verify_code-8uVaS4w7Pu.html ./
 git add -A
 git commit -m 'deploy'
 
