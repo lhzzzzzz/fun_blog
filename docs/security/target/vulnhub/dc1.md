@@ -151,6 +151,10 @@ Drupal存在已知的可利用漏洞：[已知Drupal漏洞](../../web/cms/#drupa
 
 flag2提示要通过认证，但是暴力破解不是唯一的方法。配置文件flag2的下面就是数据库配置，考虑通过进入数据库查看账号密码。
 
+获取交互shell
+
+`python -c 'import pty; pty.spawn("/bin/sh")'`
+
 通过`mysql -u dbuser -p`链接数据库
 
 ![image-20210903105023673](/assets/img/image-20210903105023673.png)
