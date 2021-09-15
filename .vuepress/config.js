@@ -81,7 +81,7 @@ module.exports = config({
               title: "账号破解工具",
               icon: "question",
               collapsable: false,
-              children: ["hydra"],
+              children: ["hydra", "cewl"],
             },
             {
               title: "渗透工具",

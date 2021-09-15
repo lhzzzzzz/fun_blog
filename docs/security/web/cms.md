@@ -30,11 +30,11 @@ comment: false
    use exploit/multi/http/drupal_drupageddon
    set RHOSTS [ip]
    run
-   ```  
+   ```
 ---
 ### CVE-2018-7600 Drupal Drupalgeddon 2 远程代码执行漏洞
   - 简介  
-  Drupal 是一款用量庞大的 CMS，其 6/7/8 版本的 Form API 中存在一处远程代码执行漏洞。  
+    Drupal 是一款用量庞大的 CMS，其 6/7/8 版本的 Form API 中存在一处远程代码执行漏洞。  
   - 影响版本  
     - Drupal 6/7/8
   - POC | Payload | exp  
@@ -91,3 +91,16 @@ comment: false
 ### CVE-2020-28948
   - POC | Payload | exp  
     - [Drupal(CVE-2020-28948/CVE-2020-28949)分析](https://mp.weixin.qq.com/s/-5z2gCrstyCLOOzgf1tZTg)
+
+------
+
+## WordPress
+
+官网 : https://wordpress.org/
+
+- 登录地址	
+
+​		默认登录地址：`/wp-admin` 或 `/wp-login.php`
+
+- 
+
