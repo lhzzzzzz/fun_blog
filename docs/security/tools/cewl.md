@@ -2,18 +2,16 @@
 # 这是页面的图标
 icon: page
 # 这是文章的标题
-title: 版本控制文件泄露利用工具
+title: cewl
 # 设置作者
 author: lhz
 # 设置写作时间
-time: 2018-10-01
+time: 2021-09-15
 # 一个页面只能有一个分类
 category: 安全工具
 # 一个页面可以有多个标签
 tag:
   - 安全工具
-  - 信息收集
-  - GitHack
 
 comment: false
 ---

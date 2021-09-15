@@ -8,6 +8,7 @@ tagline: 安全相关
 ---
 ---
 - [工具](tools/readme.md)
+- [小命令收集](tools/cmd.md)
 ---
 - CTF
   - Writeup
