@@ -13,7 +13,7 @@ category: 渗透
 tag:
   - 渗透
   - vulnhub
-  - DC
+  - DC3
 comment: false
 typora-root-url: ..\..\..\..\.vuepress\public
 
