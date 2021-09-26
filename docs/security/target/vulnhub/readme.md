@@ -9,4 +9,5 @@ comment: false
   - [DC1 Walkthrough](dc1.md)
   - [DC2 Walkthrough](dc2.md)
   - [DC3 Walkthrough](dc3.md)
+  - [DC4 Walkthrough](dc4.md)
 
