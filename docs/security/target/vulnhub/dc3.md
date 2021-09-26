@@ -25,7 +25,7 @@ typora-root-url: ..\..\..\..\.vuepress\public
 
 ><https://www.vulnhub.com/entry/dc-3,312/>
 
-## DESCRIPTION
+**DESCRIPTION**
 
 DC-3 is another purposely built vulnerable lab with the intent of gaining experience in the world of penetration testing.
 
