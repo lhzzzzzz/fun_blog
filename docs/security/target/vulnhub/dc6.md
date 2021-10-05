@@ -2,7 +2,7 @@
 # 这是页面的图标
 icon: api
 # 这是文章的标题
-title: DC-5Walkthrough
+title: DC-6Walkthrough
 # 设置作者
 author: lhz
 # 设置写作时间
@@ -13,7 +13,7 @@ category: 渗透
 tag:
   - 渗透
   - vulnhub
-  - DC5
+  - DC6
 comment: false
 
 typora-root-url: ..\..\..\..\.vuepress\public
