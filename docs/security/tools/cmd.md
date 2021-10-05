@@ -57,3 +57,21 @@ lsb_release -a
 uname -a
 ```
 
+windows设置打开防火墙端口
+
+```
+netsh firewall set portopening TCP 3389 ENABLE   #防火墙开启远程桌面3389端口
+```
+
+windows开启远程桌面
+
+```
+#设置远程桌面端口
+reg add "HKLM\System\CurrentControlSet\Control\Terminal Server\WinStations\RDP-Tcp" /t REG_DWORD /v portnumber /d 3389 /f
+#开启远程桌面
+wmic RDTOGGLE WHERE ServerName='%COMPUTERNAME%' call SetAllowTSConnections 1
+#检查端口状态
+netstat -an|find "3389"
+#关闭远程桌面
+wmic RDTOGGLE WHERE ServerName='%COMPUTERNAME%' call SetAllowTSConnections 0
+```
