@@ -4,10 +4,10 @@
   "description": "A fun blog",
   "license": "MIT",
   "scripts": {
-    "docs:build": "vuepress build D:/blog/",
-    "docs:clean-dev": "vuepress dev D:/blog/ --no-cache",
-    "docs:dev": "vuepress dev D:/blog/",
-    "docs:eject-theme": "vuepress eject-hope D:/blog/",
+    "docs:build": "vuepress build /Users/liuhanzhe/Documents/fun_blog/",
+    "docs:clean-dev": "vuepress dev /Users/liuhanzhe/Documents/fun_blog/ --no-cache",
+    "docs:dev": "vuepress dev /Users/liuhanzhe/Documents/fun_blog/",
+    "docs:eject-theme": "vuepress eject-hope /Users/liuhanzhe/Documents/fun_blog/",
 	"publish": "sh deploy.sh"
   },
   "devDependencies": {
