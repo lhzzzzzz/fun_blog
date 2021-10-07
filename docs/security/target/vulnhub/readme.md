@@ -14,4 +14,5 @@ comment: false
   - [DC6 Walkthrough](dc6.md)
   - [DC7 Walkthrough](dc7.md)
   - [DC8 Walkthrough](dc8.md)
+  - [DC9 Walkthrough](dc9.md)
 

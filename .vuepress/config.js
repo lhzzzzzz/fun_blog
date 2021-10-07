@@ -100,7 +100,7 @@ module.exports = config({
                 icon: "page",
                 prefix: "./vulnhub/",
                 collapsable: false,
-                children: ["dc1", "dc2", "dc3", "dc4", "dc5", "dc6", "dc7", "dc8"],
+                children: ["dc1", "dc2", "dc3", "dc4", "dc5", "dc6", "dc7", "dc8", "dc9"],
               },
 
             ],
