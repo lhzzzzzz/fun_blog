@@ -28,7 +28,7 @@ typora-root-url: ..\..\..\..\.vuepress\public
 
 靶机地址：
 
-> https://www.vulnhub.com/entry/dc-8,367/
+> <https://www.vulnhub.com/entry/dc-8,367/>
 
 **DESCRIPTION**
 
