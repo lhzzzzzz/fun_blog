@@ -24,6 +24,10 @@ typora-root-url: ..\..\..\..\.vuepress\public
 
 ## 0x01 介绍
 
+靶机地址：
+
+> https://www.vulnhub.com/entry/dc-7,356/
+
 **DESCRIPTION**
 
 DC-7 is another purposely built vulnerable lab with the intent of gaining experience in the world of penetration testing.
