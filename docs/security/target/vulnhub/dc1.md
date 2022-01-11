@@ -298,7 +298,7 @@ hashcat -m 7900 -a 0 hash.txt /usr/share/wordlists/rockyou.txt
 
 使用LineEnum提权
 
-在kali上下载LineEnum，并启动一个HTTP服务roo
+在kali上下载LineEnum，并启动一个HTTP服务
 
 ```bash
 git clone https://github.com/rebootuser/LinEnum.git
