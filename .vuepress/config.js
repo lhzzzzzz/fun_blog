@@ -38,7 +38,7 @@ module.exports = config({
     repo: "https://github.com/lhzzzzzz/fun_blog",
     docsBranch: "master",
 
-    sidebar: false,
+    sidebar: "auto",
 	  darkmode: "auto",
 
     displayAllHeaders: true,
@@ -51,16 +51,15 @@ module.exports = config({
 
 	nav: [
           { text: "博客主页", link: "/", icon: "home" },
-          { text: "安全", link: "/docs/security/", icon: "safe" },
           {
             text: "渗透",
             icon: "safe",
-            prefix: "/docs/",
+            prefix: "/docs/security/",
             items: [
-              { text: "靶机", link: "tutorial", icon: "creative" },
+              { text: "靶机", link: "target/", icon: "creative" },
               { text: "收集", link: "markdown/", icon: "markdown" },
               { text: "工具", link: "vuepress/", icon: "markdown" },
-              { text: "工具", link: "vuepress/", icon: "creative" },
+              { text: "其他", link: "vuepress/", icon: "creative" },
             ],
           },
           {
@@ -73,90 +72,11 @@ module.exports = config({
               { text: "工具", link: "vuepress/", icon: "markdown" },
             ],
           },
+          { text: "其他", link: "/", icon: "creative" },
 		      { text: "时间轴", link: "/timeline/", icon: "time" },
         ],
 
-	sidebar: {
-      "/docs/security/tools/": [
-        {
-          title: "安全工具",
-          icon: "creative",
-          prefix: "/docs/security/tools/",
-          collapsable: false,
-          children: [
-			"",
-			"cmd",
-            "cvs",
-			"gopherus",
-			"hashcat",
-			"hydra",
-			"jwt-cracker",
-			"nc",
-			"wpscan",
-			"cewl",
 	
-          ],
-        },
-      ],
-
-      "/docs/security/collection/": [
-            {
-              title: "信息收集",
-              icon: "anonymous",
-              prefix: "./",
-              collapsable: false,
-              children: ["web_file", "passwd"],
-            },
-          ],
-    "/docs/security/target/": [
-          {
-            title: "靶机",
-            icon: "anonymous",
-            prefix: "./",
-            collapsable: false,
-            children: [
-              {
-                title: "vulnhub",
-                icon: "page",
-                prefix: "./vulnhub/",
-                collapsable: false,
-                children: ["dc1", "dc2", "dc3", "dc4", "dc5", "dc6", "dc7", "dc8", "dc9"],
-              },
-
-            ],
-          },
-        ],
-      "/docs/security/web/": [
-          {
-            title: "Web",
-            icon: "hot",
-            prefix: "./",
-            collapsable: false,
-            children: ["sql_injection", "xss", "file_include", "cms"],
-          },
-        ],
-
-
-
-      "/docs/security/ctf/": [
-        {
-          title: "writeup",
-          icon: "flag",
-          prefix: "/docs/security/ctf/",
-          collapsable: false,
-          children: ["ctfhub_ssrf"],
-        },
-      ],
-      "/docs/develop/": [
-        {
-          title: "开发",
-          icon: "symbol",
-          prefix: "/docs/develop/",
-          collapsable: false,
-          children: ["git"],
-        },
-      ],
-    },
 
 
 
