@@ -18,7 +18,7 @@ git push -f git@github.com:lhzzzzzz/fun_blog.git master
 cd dist
 
 # 如果是发布到自定义域名
-echo 'www.liuhanzhe.com' > CNAME
+echo 'pill0w.xyz' > CNAME
 
 
 

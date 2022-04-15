@@ -52,7 +52,17 @@ module.exports = config({
 	nav: [
           { text: "博客主页", link: "/", icon: "home" },
           { text: "安全", link: "/docs/security/", icon: "safe" },
-		      { text: "开发", link: "/docs/develop/git", icon: "shell" },
+          {
+            text: "安全",
+            icon: "safe",
+            prefix: "/docs/",
+            items: [
+              { text: "靶机", link: "tutorial", icon: "creative" },
+              { text: "收集", link: "markdown/", icon: "markdown" },
+              { text: "工具", link: "vuepress/", icon: "vue" },
+              { text: "其他", link: "vuepress/", icon: "vue" },
+            ],
+          },
 		      { text: "时间轴", link: "/timeline/", icon: "time" },
         ],
 
