@@ -12,16 +12,10 @@ category: 渗透
 # 一个页面可以有多个标签
 tag:
   - 渗透
-  - vulnhub
-  - DC9
+  - 靶机
 comment: false
 
 typora-root-url: ..\..\..\..\.vuepress\public
-
-
-
-
-
 
 ---
 
