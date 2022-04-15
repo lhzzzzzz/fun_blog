@@ -63,6 +63,16 @@ module.exports = config({
               { text: "工具", link: "vuepress/", icon: "creative" },
             ],
           },
+          {
+            text: "CTF",
+            icon: "safe",
+            prefix: "/docs/",
+            items: [
+              { text: "学习", link: "tutorial", icon: "creative" },
+              { text: "Writeup", link: "markdown/", icon: "markdown" },
+              { text: "工具", link: "vuepress/", icon: "markdown" },
+            ],
+          },
 		      { text: "时间轴", link: "/timeline/", icon: "time" },
         ],
 
