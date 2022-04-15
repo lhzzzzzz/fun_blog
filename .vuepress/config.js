@@ -64,7 +64,7 @@ module.exports = config({
             ],
           },
           {
-            text: "CTF22222",
+            text: "CTF333333",
             icon: "safe",
             prefix: "/docs/",
             items: [
