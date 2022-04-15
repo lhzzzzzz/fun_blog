@@ -38,7 +38,7 @@ module.exports = config({
     repo: "https://github.com/lhzzzzzz/fun_blog",
     docsBranch: "master",
 
-    sidebar: "auto",
+    sidebar: false,
 	  darkmode: "auto",
 
     displayAllHeaders: true,
