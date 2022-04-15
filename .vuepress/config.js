@@ -60,7 +60,7 @@ module.exports = config({
               { text: "靶机", link: "tutorial", icon: "creative" },
               { text: "收集", link: "markdown/", icon: "markdown" },
               { text: "工具", link: "vuepress/", icon: "vue" },
-              { text: "其他", link: "vuepress/", icon: "vue" },
+              { text: "其他", link: "vuepress/", icon: "creative" },
             ],
           },
 		      { text: "时间轴", link: "/timeline/", icon: "time" },
