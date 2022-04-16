@@ -5,7 +5,7 @@ module.exports = config({
   base: "/",
 
   dest: "./dist",
-
+  sidebar: false,
   head: [
     [
       "script",
@@ -37,8 +37,6 @@ module.exports = config({
     author: "lhz",
     repo: "https://github.com/lhzzzzzz/fun_blog",
     docsBranch: "master",
-
-    sidebar: "auto",
 	  darkmode: "auto",
 
     displayAllHeaders: true,

@@ -2,7 +2,7 @@
 # 这是页面的图标
 icon: api
 # 这是文章的标题
-title: Kiotrix_1-Walkthrough
+title: 靶机 Kiotrix_1-writeup
 # 设置作者
 author: lhz
 # 设置写作时间
@@ -15,9 +15,11 @@ tag:
   - 靶机
 comment: false
 
-typora-root-url: ..\..\..\..\.vuepress\public
+typora-root-url: ..\..\..\.vuepress\public
 
 ---
+
+# 扫描
 
 扫描IP，发现主机IP
 

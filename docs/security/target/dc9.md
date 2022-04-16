@@ -2,7 +2,7 @@
 # 这是页面的图标
 icon: api
 # 这是文章的标题
-title: DC9-Walkthrough
+title: 靶机 DC9-writeup
 # 设置作者
 author: lhz
 # 设置写作时间
@@ -15,7 +15,7 @@ tag:
   - 靶机
 comment: false
 
-typora-root-url: ..\..\..\..\.vuepress\public
+typora-root-url: ..\..\..\.vuepress\public
 
 ---
 
