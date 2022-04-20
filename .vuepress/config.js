@@ -49,38 +49,13 @@ module.exports = config({
 
 	nav: [
           { text: "博客主页", link: "/", icon: "home" },
-          {
-            text: "渗透",
-            icon: "safe",
-            prefix: "/docs/security/",
-            items: [
-              { text: "靶机", link: "target/", icon: "creative" },
-              { text: "收集", link: "markdown/", icon: "markdown" },
-              { text: "工具", link: "vuepress/", icon: "markdown" },
-              { text: "其他", link: "vuepress/", icon: "creative" },
-            ],
-          },
-          {
-            text: "CTF",
-            icon: "safe",
-            prefix: "/docs/",
-            items: [
-              { text: "学习", link: "tutorial", icon: "creative" },
-              { text: "Writeup", link: "markdown/", icon: "markdown" },
-              { text: "工具", link: "vuepress/", icon: "markdown" },
-            ],
-          },
-          { text: "其他", link: "/", icon: "creative" },
+          { text: "安全", link: "/docs/security/索引.md", icon: "anonymous" },
+          { text: "其他", link: "/docs/其他/", icon: "editor" },
 		      { text: "时间轴", link: "/timeline/", icon: "time" },
         ],
-
-	
-
-
-
     footer: {
       display: true,
-      content: "lhz",
+      content: "<a href='https://beian.miit.gov.cn/' target='_blank'>陕ICP备2022004412号</a>",
     },
 
     comment: {
