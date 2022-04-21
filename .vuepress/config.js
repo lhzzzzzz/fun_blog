@@ -1,7 +1,7 @@
 const { config } = require("vuepress-theme-hope");
 
 module.exports = config({
-  title: "sub esp",
+  title: "sub esp,∞",
   base: "/",
 
   dest: "./dist",
