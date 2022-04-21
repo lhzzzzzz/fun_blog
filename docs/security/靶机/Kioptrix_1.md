@@ -19,7 +19,7 @@ typora-root-url: ..\..\..\.vuepress\public
 
 ---
 
-## 扫描
+## 0x01 扫描
 
 扫描IP，发现主机IP
 
@@ -140,7 +140,7 @@ Nmap done: 1 IP address (1 host up) scanned in 27.20 seconds
 
 ```
 
-## 方法一
+## 0x02 方法一
 
 发现samba，使用smbclinet没有扫出来版本，使用msf扫描发现版本
 
@@ -162,7 +162,7 @@ Nmap done: 1 IP address (1 host up) scanned in 27.20 seconds
 
 ![image-20220415181300663](/assets/img/image-20220415181300663.png)
 
-## 方法二
+## 0x03 方法二
 
 ​	使用nikto扫描
 
