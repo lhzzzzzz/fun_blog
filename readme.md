@@ -4,7 +4,7 @@ home: true
 icon: home
 title: 主页
 heroText: .
-heroFullScreen: true
+heroFullScreen: false
 bgImage: /back.jpg
 ---
 
