@@ -1,6 +1,6 @@
 ---
 # 这是页面的图标
-icon: api
+icon: computer
 # 这是文章的标题
 title: 靶机 BSides-Vancouver-2018-Workshop Walkthrough
 # 设置作者
