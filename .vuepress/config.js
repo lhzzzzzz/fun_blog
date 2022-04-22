@@ -31,7 +31,7 @@ module.exports = config({
   },
 
   themeConfig: {
-    logo: "/batman.jpg",
+    logo: "/bat.png",
     hostname: "http://www.liuhanzhe.com/",
 
     author: "lhz",
