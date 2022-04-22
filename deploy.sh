@@ -25,7 +25,7 @@ echo 'pill0w.xyz' > CNAME
 git init 
 
 cp ../baidu_verify_code-8uVaS4w7Pu.html ./
-scp -r D:\fun_blog\dist\* root@124.220.17.207:/www/wwwroot/pill0w.xyz
+scp -r D:\\fun_blog\\dist\\* root@124.220.17.207:/www/wwwroot/pill0w.xyz
 
 #git add -A
 #git commit -m 'deploy'
