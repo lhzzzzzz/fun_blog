@@ -49,8 +49,8 @@ module.exports = config({
 
 	nav: [
           { text: "博客主页", link: "/", icon: "home" },
-          { text: "安全", link: "/docs/security/索引.md", icon: "anonymous" },
-          { text: "其他", link: "/docs/其他/0.readme.md", icon: "editor" },
+          { text: "安全", link: "/docs/security/索引/", icon: "anonymous" },
+          { text: "其他", link: "/docs/其他/0.readme/", icon: "editor" },
 		      { text: "时间轴", link: "/timeline/", icon: "time" },
         ],
     footer: {
