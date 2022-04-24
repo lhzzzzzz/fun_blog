@@ -24,7 +24,7 @@ echo 'pill0w.xyz' > CNAME
 
 git init 
 
-cp ../baidu_verify_code-8uVaS4w7Pu.html ./
+cp ../baidu_verify_code-GY9Zg9pgIY.html ./
 scp -r * root@124.220.17.207:/www/wwwroot/pill0w.xyz
 
 #git add -A
