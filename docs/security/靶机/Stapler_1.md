@@ -225,9 +225,9 @@ kali使用nc监听`nc -nlvp 4444`，反弹成功，拿到shell
 
 当前用户`www-data`,下一步尝试提权
 
-# 0x03 提权
+## 0x03 提权
 
-## 提权1
+### 提权1
 
 查看home下的文件，未发现特殊文件，查看shell历史命令`cat */.bash_history`，发现peter用户ssh密码
 
@@ -243,7 +243,7 @@ kali使用nc监听`nc -nlvp 4444`，反弹成功，拿到shell
 
 
 
-## 提权2
+### 提权2
 
 查看Linux版本
 
