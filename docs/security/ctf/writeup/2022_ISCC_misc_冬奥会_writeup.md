@@ -2,7 +2,7 @@
 # 这是页面的图标
 icon: token
 # 这是文章的标题
-title: 2022-ISCC-web-冬奥会-writeup
+title: 2022-ISCC-misc-冬奥会-writeup
 # 设置作者
 author: lhz
 # 设置写作时间
