@@ -32,7 +32,7 @@ module.exports = config({
 
   themeConfig: {
     logo: "/bat.png",
-    hostname: "http://www.liuhanzhe.com/",
+    hostname: "https://www.pill0w.xyz/",
 
     author: "lhz",
     repo: "https://github.com/lhzzzzzz/fun_blog",
